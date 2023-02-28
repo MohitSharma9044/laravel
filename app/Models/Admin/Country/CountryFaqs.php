@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CountryFaqs extends Model
 {
     use HasFactory;
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

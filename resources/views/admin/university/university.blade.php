@@ -42,6 +42,11 @@
 </div>
 
 <div class="mb-3">
+    <label class="form-label" for="uni_thumb_image">Thumbnails Image</label>
+    <input type="file" class="form-control" name="uni_thumb_image" id="uni_thumb_image" placeholder="University Thumbnails">
+</div>
+
+<div class="mb-3">
     <label class="form-label" for="uni_logo">Logo Image</label>
     <input type="file" class="form-control" name="uni_logo" id="uni_logo" placeholder="University Logo">
 </div>

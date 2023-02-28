@@ -22,6 +22,8 @@ class CreateCountryWorkOpportunitiesTable extends Migration
             $table->longText('part_content');
             $table->string('study_title');
             $table->longText('study_content');
+            $table->string('study_title2');
+            $table->longText('study_content2');
             $table->timestamps();
         });
         Schema::create('work_details', function (Blueprint $table) {

@@ -5,6 +5,7 @@ use App\Models\Admin\Country\CostQuestion;
 use App\Models\Admin\Country\WorkDetail;
 use App\Models\Admin\University\UniversityCoursesPoint;
 use App\Models\Admin\University\UniversityCollegesPoint;
+use Illuminate\Support\Facades\Route;
 function getParentCountryById($id)
 {
 $country = DB::table('countries')->where(['id' => $id])->get();
@@ -43,6 +44,7 @@ $menuArr = [];
 foreach($country as $key => $country_list)
 {
     $menuArr[$country_list['id']]['country_name'] = $country_list['country_name'];
+    $menuArr[$country_list['id']]['country_slug'] = $country_list['country_slug'];
     $menuArr[$country_list['id']]['parent_id'] = $country_list['parent_id'];
 }
     $menuList = buildTreeView($menuArr,0);
@@ -61,12 +63,10 @@ return $menuList;
     if($html==''){
     $html.='<ul class="country_ul">';
     }else{
-    $html.='<li class="cd-dropdown-left js-cd-dropdown-left"> 
-    <a href="javascript:void(0)" class="cd-dropdown-bar-link js-cd-dropdown-bar-link d-block">European Union</a>
-    <div class="cd-dropdown-right">
+    $html.='<div class="cd-dropdown-right">
     <div class="cd-dropdown-indv " id="european_union">
     <div class="row">
-    <h3 class="menu-rightside-heading capture-none"><span class="menu-rightside-heading-span">European Union</span>
+    <h3 class="menu-rightside-heading capture-none"><span class="menu-rightside-heading-span">'. getParentCountryById($data['parent_id']) .'</span>
     </h3>
     </div>
     <div class="row">
@@ -78,8 +78,13 @@ return $menuList;
     }
     if($level==$prelevel){
     $html.='</li>';
+}
+    if($data['parent_id'] == 0){
+        $html.='<li class="cd-dropdown-left js-cd-dropdown-left"><a href="'. route('country',  $data['country_slug']) .'" class="cd-dropdown-bar-link js-cd-dropdown-bar-link d-block"  >'. $data['country_name'] .'</a>';
+    }else{
+        $parantCountryUrl = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', getParentCountryById($data['parent_id']))));
+        $html.='<li class="d-block"><a href="'. route('country.parent.name', [$parantCountryUrl, $data['country_slug']]) .'" class="cd-drop-links">'. $data['country_name'] .'</a>';
     }
-    $html.='<li class="d-block"><a href="study-abroad/switzerland.php" class="cd-drop-links ">'. $data['country_name'] .'</a>';
     if($level>$prelevel){
     $prelevel=$level;
     }
@@ -93,7 +98,6 @@ return $menuList;
     }
     return $html;
     }
-
 
 
 

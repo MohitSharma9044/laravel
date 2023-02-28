@@ -3963,3 +3963,12 @@ content: "\f005\f005\f005\f005";
 
 
 /*-----------------University-----------------*/
+
+.country_ul li a:hover::after
+{
+    display: none;
+}
+.country_ul li a.cd-drop-links:hover::after
+{
+    display: inherit;
+}

@@ -19,6 +19,7 @@ class CreateUniversitiesTable extends Migration
             $table->string('uni_name');
             $table->string('uni_slug');
             $table->string('uni_logo');
+            $table->string('uni_thumb_image');
             $table->string('uni_banner');
             $table->string('uni_mobiles');
             $table->string('uni_emails');

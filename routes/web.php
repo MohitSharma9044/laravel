@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Course\CourseController;
 use App\Http\Controllers\Admin\Country\CountryController;
 use App\Http\Controllers\Admin\Country\CountryDetailsController;
 use App\Http\Controllers\Admin\University\UniversityController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,8 @@ Route::view('post-degree', 'post-degree');
 Route::view('travel-accomodation', 'travel-accomodation');
 Route::view('finance', 'finance');
 Route::view('privacy-policy', 'privacy-policy');
+Route::get('country/{slug}', [HomeController::class, 'countryDetails'])->name('country');
+Route::get('country/{parant}/{slug}', [HomeController::class, 'parentCountryDetails'])->name('country.parent.name');
 
 
 

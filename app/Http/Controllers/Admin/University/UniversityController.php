@@ -57,6 +57,14 @@ class UniversityController extends Controller
             $image->storeAs($uploadPath, $filename);
             $university->uni_logo = $filename;
         }
+        if($request->hasFile('uni_thumb_image'))
+        {
+            $uploadPath = "public/uploads/university/";
+            $image = $request->file("uni_thumb_image");
+            $filename = time().'-'. rand(111111, 999999). '-' . rand(0, 1000). '.' .$image->getClientOriginalExtension();
+            $image->storeAs($uploadPath, $filename);
+            $university->uni_thumb_image = $filename;
+        }
 
         if($request->hasFile('uni_banner'))
         {
@@ -222,6 +230,20 @@ class UniversityController extends Controller
             $university->uni_logo = $filename;
         }else{
             $university->uni_logo = $request->test_uni_logo;
+        }
+
+        if($request->hasFile('uni_thumb_image'))
+        {
+            if (Storage::exists('public/uploads/university/'.$university->uni_thumb_image)) {
+                Storage::delete('public/uploads/university/'.$university->uni_thumb_image);
+            }
+            $uploadPath = "public/uploads/university/";
+            $image = $request->file("uni_thumb_image");
+            $filename = time().'-'. rand(111111, 999999). '-' . rand(0, 1000). '.' .$image->getClientOriginalExtension();
+            $image->storeAs($uploadPath, $filename);
+            $university->uni_thumb_image = $filename;
+        }else{
+            $university->uni_thumb_image = $request->test_uni_thumb_image;
         }
 
         if($request->hasFile('uni_banner'))

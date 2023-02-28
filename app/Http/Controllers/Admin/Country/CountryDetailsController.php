@@ -296,6 +296,8 @@ class CountryDetailsController extends Controller
             'part_content' => 'required',
             'study_title' => 'required',
             'study_content' => 'required',
+            'study_title2' => 'required',
+            'study_content2' => 'required',
             'work_title.*' => 'required',
             'work_image.*' => 'required',
         ]);
@@ -310,6 +312,8 @@ class CountryDetailsController extends Controller
             $work->part_content = $validatedData['part_content'];
             $work->study_title = $validatedData['study_title'];
             $work->study_content = $validatedData['study_content'];
+            $work->study_title2 = $validatedData['study_title2'];
+            $work->study_content2 = $validatedData['study_content2'];
             $work->save();
             foreach($validatedData['work_title'] as $key => $title)
             {

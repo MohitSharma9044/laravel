@@ -510,6 +510,16 @@
             <label class="form-label" for="study_content">Post-Study Description</label>
             <textarea  class="form-control h40" id="study_content" name="study_content" placeholder="Post-Study Description">@if(count($work_list) > 0) {{ $work_list[0]->study_content }} @endif</textarea>
         </div>
+        <h4>Second Section</h4>
+        <div class="mb-3 col-12">
+            <label class="form-label" for="study_title2">Title</label>
+            <input type="text" class="form-control" id="study_title2" name="study_title2" value="@if(count($work_list) > 0) {{ $work_list[0]->study_title2 }} @endif" placeholder="Second Title">
+        </div>
+        <div class="mb-3 col-12">
+            <label class="form-label" for="study_content2">Description</label>
+            <textarea  class="form-control h40" id="study_content2" name="study_content2" placeholder=" Description">@if(count($work_list) > 0) {{ $work_list[0]->study_content2 }} @endif</textarea>
+        </div>
+
         <div class="workBox">
             @php
             $workDetails = [];
@@ -664,6 +674,7 @@
 <script>
 
 CKEDITOR.replace('scholar_desc');
+CKEDITOR.replace('study_content2');
 
 
 let fi = @php  
