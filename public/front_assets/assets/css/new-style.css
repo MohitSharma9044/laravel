@@ -749,10 +749,10 @@ ul.topbar-listing li.apply-now .line-4 {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    flex-flow: row wrap;
+    /* display: flex; */
+    /* display: -webkit-flex; */
+    /* align-items: center; */
+    /* flex-flow: row wrap; */
 }
 .header-section ul li {
 }
@@ -851,11 +851,12 @@ ul.topbar-listing li.apply-now .line-4 {
     flex-flow: row wrap;
 }
 .header-nav ul.main-menu li {
-    float: left;
-    width: auto;
+    /* float: left; */
+    /* width: auto; */
+    /* position: relative; */
 }
 .header-section ul li {
-    display: inline-block;
+    /* display: inline-block; */
 }
 header-nav ul.main-menu li:hover > a, .header-nav ul.main-menu li > a.active {
     color: #5c4c52;
@@ -1386,14 +1387,17 @@ footer .footer-data h4 {    font-size: 24px !important}
     color: #ffffff;
     -webkit-text-decoration: none;
     text-decoration: none;
+    width: 20%;
 }
 
  .cd-dropdown-indv.cd-active {
     display: block;
 }
+.cd-dropdown-right {position:absolute;top: 0;left: 22%;right: 0;/* width: 80%; */}
 .cd-dropdown-indv {
     padding: 10px;
-    display: none;
+    /* display: none; */
+    top: 0;
 }
 .cd-dropdown-indv .row {
     /* display: -webkit-box; */
@@ -3682,3 +3686,280 @@ label.lbs {
 }
 
 
+/*-----------------University-----------------*/
+.university_list {padding:60px 0}
+.university_list .full_box {
+    background: #f4f3f3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #2c2c2c61;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 25px;
+}
+.university_list .full_box .full_boxs {width: 30%;position: relative;}
+.university_list .full_box .full_img {height: 100%;}
+.university_list .full_box .full_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .8s ease-in-out;
+}
+.university_list .full_box .public {
+    background: #da343e;
+    position: absolute;
+    top: 5px;
+    padding: 1px 11px;
+    border-radius: 5px;
+    left: 5px;
+}
+.university_list .full_box .public p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+.university_list .full_box .uni_logo  {
+    position: absolute;
+    top: 0px;
+    right: 6px;
+    width: 29%;
+    padding: 5px 7px 7px 7px;
+    background: #fff;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
+}
+.university_list .full_box .uni_logo img {
+    width: 100%;
+}
+.university_list .full_box .uni_rating:before  {
+  font-size: 18px;
+  font-family: FontAwesome;
+  position: absolute;
+  bottom: 5px;
+  color: #ffc400;
+  left: 5px;
+  }
+  
+.university_list .full_box .uni_rating.star-5:before {
+content: "\f005\f005\f005\f005\f005";  
+}
+.university_list .full_box .uni_rating.star-4:before {
+content: "\f005\f005\f005\f005";  
+}
+
+.uni_contnt {
+    width: 70%;
+    overflow: hidden;
+    position: relative;
+}
+.uni_contnt .university_space {
+    padding: 20px;
+}
+.uni_contnt .university_space h2 {
+    font-size: 19px;
+    font-weight: 500;
+    font-family: 'Zona Pro';
+}
+.uni_contnt .university_space h2 a {
+    color: #4f4f4f;
+}
+.uni_contnt .border-list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+.uni_contnt .border-list li {
+    padding-right: 25px;
+    position: relative;
+    font-size: 14px;
+    color: #000;
+    font-weight: 100;
+    font-family: 'Zona Proregular';
+    line-height: 17px;
+}
+.uni_contnt .border-list li:before {content:'';content: "";height: 100%;top: 0px;width: 1px;background: #6c6c6c;position: absolute;right: 11px;}
+.uni_contnt .border-list li:last-child:before  {display:none}
+.uni_contnt .border-list li span {}
+.uni_contnt .border-list li strong {}
+.uni_contnt .border-list li strong {}
+
+.university_details {
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    grid-template-columns: 245px 1fr;
+    display: grid;
+}
+.university_details .data_card_left{
+    /* grid-template-columns: 1fr 104px; */
+    /* display: flex; */
+}
+.university_details .data_card_right{}
+.university_details .data_card {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+.university_details .data_card .data_heading {
+    position: relative;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    font-family: inherit;
+}
+.university_details .data_card .data_content {
+    position: relative;
+    font-size: 15px;
+    color: #515151;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.uni_btn {
+    display: flex;
+    gap: 10px;
+}
+.uni_btn .uni_btn_css {
+    border: 2px solid #da343e;
+    padding: 5px 15px;
+    border-radius: 47px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+.uni_btn .uni_btn_css:hover {background:#da343e; color:#fff}
+.uni_btn .uni_btn_css:nth-child(2) {
+    border: 2px solid #3fae03;
+}
+.uni_btn .uni_btn_css:nth-child(3) {
+    border: 2px solid #00acff;
+}
+
+.uni_btn .uni_btn_css:nth-child(2):hover {
+    background:  #3fae03; color:#fff
+}
+.uni_btn .uni_btn_css:nth-child(3):hover  {
+    background: #00acff; color:#fff
+}
+.university_list .full_box:last-child {margin-bottom:0px}
+.uni_contnt .border-list li:last-child {color:green}
+
+.uni_filter {background: #ffffff;border-radius: 5px;box-shadow: 0px 0px 10px #2c2c2c61;overflow: hidden;/* display: flex; */margin-bottom: 25px;padding: 13px;position: -webkit-sticky; /* Safari */}
+
+.uni_filter ul.uk-accordion li {}
+.uni_filter ul.uk-accordion li .uk-accordion-title {
+    margin: 0;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-title:before {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 36%;
+    transform: translate(0px, -50%);
+    right: 0;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  {
+    max-height: 32.5rem;
+    transition: ease all .3s;
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul {
+    padding-left: 0;
+    margin: 0;
+    max-height: 11.9rem;
+    overflow-y: auto;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul li {
+    padding: 0;
+    display: block;
+    position: relative;
+    font-size: .95rem;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul li input {
+    position: absolute;
+    opacity: 0;
+	display:none
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul li label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 23px;
+    line-height: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Zona Proregular';
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul li label:before {content:'';margin-right: 6px;display: inline-block;vertical-align: middle;width: 15px;height: 15px;background: white;border: 1px solid red;position: absolute;left: 0px;top: 0px;}
+.uni_filter ul.uk-accordion li .uk-accordion-content  ul li input:checked+label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    transform: rotate(45deg);
+    height: 12px;
+    width: 6px;
+    border-bottom: 2px solid #da343e;
+    border-right: 2px solid #da343e;
+}
+
+/* width */
+.uni_filter ul.uk-accordion li .uk-accordion-content ul::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.uni_filter ul.uk-accordion li .uk-accordion-content ul::-webkit-scrollbar-track {
+  background: #d2d2d2;
+}
+ 
+/* Handle */
+.uni_filter ul.uk-accordion li .uk-accordion-content ul::-webkit-scrollbar-thumb {
+  background: #da343e;
+}
+
+/* Handle on hover */
+.uni_filter ul.uk-accordion li .uk-accordion-content ul::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.uni_filter .filter_clear {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+.uni_filter .filter_clear h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.uni_filter .filter_clear span {
+    font-size: 15px;
+    color: #da343e;
+}
+.uni_filter ul.uk-accordion li .uk-accordion-content ul li label i {    color: #ffc400;}
+
+@media (max-width:992px){
+	
+.university_list .full_box {display:block}	
+.university_list .full_box .full_boxs, .uni_contnt {  width: 100%; position: relative;}
+.university_details {    display: block;}
+.uni_btn {display: block;flex-wrap: wrap;}
+.uni_btn a {display: block;width: 100%;margin: 11px 0;}
+
+
+}
+
+
+
+/*-----------------University-----------------*/

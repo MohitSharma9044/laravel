@@ -59,15 +59,27 @@ return $menuList;
     if($parent==$data['parent_id']){
     if($level>$prelevel){
     if($html==''){
-    $html.='<ul class="nav navbar-nav">';
+    $html.='<ul class="country_ul">';
     }else{
-    $html.='<ul class="dropdown-menu">';
+    $html.='<li class="cd-dropdown-left js-cd-dropdown-left"> 
+    <a href="javascript:void(0)" class="cd-dropdown-bar-link js-cd-dropdown-bar-link d-block">European Union</a>
+    <div class="cd-dropdown-right">
+    <div class="cd-dropdown-indv " id="european_union">
+    <div class="row">
+    <h3 class="menu-rightside-heading capture-none"><span class="menu-rightside-heading-span">European Union</span>
+    </h3>
+    </div>
+    <div class="row">
+    <div class="col-12 ">
+    <div> 
+    <div class="d-flex">
+    <ul class="mr-2">';
     }
     }
     if($level==$prelevel){
     $html.='</li>';
     }
-    $html.='<li><a href="#">'.$data['country_name'].'<span class="caret"></span></a>';
+    $html.='<li class="d-block"><a href="study-abroad/switzerland.php" class="cd-drop-links ">'. $data['country_name'] .'</a>';
     if($level>$prelevel){
     $prelevel=$level;
     }
