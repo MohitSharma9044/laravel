@@ -87,82 +87,85 @@
     
     <div class="university_slider owl-carousel owl-theme">
 
-        @if (count($country['country_university']) > 0)
-            @foreach ($country['country_university']  as $university)
-    <div class="item">
-    <div id="ctp_tuple_0">
-    <div class="shadowCard ctpCard undefined">
-    <div class="headSec">
-    <a class="ripple dark" href="the-university-of-melbourne.php"></a>
-    <div class="background-style"></div>
-    <div class="flexRow opecLyr">
-    <div class="imgBox">
-    <a href="the-university-of-melbourne.php">
-        @if ($university[''])
-            
+@if (count($country['country_university']) > 0)
+    @foreach ($country['country_university']  as $university)
+        <div class="item">
+        <div id="ctp_tuple_0">
+        <div class="shadowCard ctpCard undefined">
+        <div class="headSec">
+        <a class="ripple dark" href="the-university-of-melbourne.php"></a>
+        <div class="background-style"></div>
+        <div class="flexRow opecLyr">
+        <div class="imgBox">
+        <a href="the-university-of-melbourne.php">
+        @if ($university['uni_thumb_image'] != '')
+        <img src="{{ asset('storage/uploads/university/'. $university['uni_thumb_image']) }}" alt="{{$university['uni_name']}}" height="62" width="83">
         @endif
-    <img src="../img/broad/college_609_20-15_00_mel-Cover.jpeg" height="62" width="83">
-    </a></div>
-    <div class="instBox">
-    <div class="flexRowSpaceBtwn">
-    <div class="elipsysBox">
-    <strong class="instNamev2"><a href="the-university-of-melbourne.php">The university of melbourne, melbourne</a></strong>
-    <span class="instLoc"><i class="ctpSprite ctpv2-loc"></i>Victoria, australia</span>
-    </div>
-    </div>
-    
-    <div class="keyInfo">
-    <p class="keyInfo_txt">
-    <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Admission 22</a>
-    <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Placement</a>
-    <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Cutoff</a>
-    </p>
-    </div>
-    
-    </div>
-    </div>
-    </div>
-    <div class="contSec ">
-    <div class="flexRowEqual">
-    <div>
-    <label class="blockLabel"><span class="truncateTxt">Selected <ev> Courses</ev></span></label>
-    <div class="valueTxt">
-    <a class="ripple dark" href="#">5 Courses</a><label class="inlineLabel">&nbsp;(<!-- -->781+ Seats<!-- -->)</label></div>
-    </div>
-    <div><label class="blockLabel truncateTxt">Exams</label>
-    <div class="valueTxt">
-    <div class="exams-flex">─</div>
-    </div>
-    </div>
-    </div>
-    <div class="flexRowEqual">
-    <div><label class="blockLabel">Value of Money Rating</label>
-    <div class="valueTxt"><span class="ctpv2-rating"><strong>4.7<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:94%"></i></i></strong></span></div>
-    </div>
-    <div><label class="blockLabel">Placement Rating</label>
-    <div class="valueTxt"><span class="ctpv2-rating"><strong>4.4<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:88%"></i></i></strong></span></div>
-    </div>
-    </div>
-    <div class="flexRowEqual">
-    <div><label class="blockLabel">Course Rating</label>
-    <div class="valueTxt"><a class="ratingCount_link ripple dark" href="/college/shri-ram-college-of-commerce-university-of-delhi-maurice-nagar-23930/reviews"><span class="ctpv2-rating"><strong>4.5<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:90%"></i></i></strong></span>416</a></div>
-    </div>
-    <div><label class="blockLabel">Ranked</label>
-    <div class="valueTxt">─</div>
-    </div>
-    </div>
-    </div>
-    <div class="btnSec flexRowSpaceBtwn btnWidth">
-    <div class="tupleCta"><button type="button" name="button" data-type="button" class="button button--secondary rippleefect">Apply Now</button><button type="button" name="button" id="brchr_53143" class="ctp-btn ctpBro-btn rippleefect button button--orange tupleBrochureButton brchr_53143"
-    data-courseid="53143" data-trackid="213" cta-type="download_brochure"><i></i>Brochure</button></div><span class="course--shrtlst shortlistStar" style="float:left"><i id="shrt_53143" class="pwa-shrtlst-ico tupleShortlistButton shrt_53143" data-courseid="53143" data-trackid="215"></i> </span></div>
-    <div
-    class="msgSec"></div>
-    </div>
-    </div>
-    </div>
+        </a></div>
+        <div class="instBox">
+        <div class="flexRowSpaceBtwn">
+        <div class="elipsysBox">
+            @if ($university['uni_name'] != '')
+        <strong class="instNamev2"><a href="{{ url('details/'. getParentCountrySlugById($university['country_id']). '/' .$university['uni_slug']) }}">{{ $university['uni_name'] }}</a></strong>
+        @endif
+        @if ($university['uni_location'] != '')
+        <span class="instLoc"><i class="ctpSprite ctpv2-loc"></i>{{ $university['uni_location'] }}</span>
+        @endif
+        </div>
+        </div>
+
+        <div class="keyInfo">
+        <p class="keyInfo_txt">
+        <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Admission 22</a>
+        <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Placement</a>
+        <a class="vw-adLnkv2 ripple dark" href="the-university-of-melbourne.php">Cutoff</a>
+        </p>
+        </div>
+
+        </div>
+        </div>
+        </div>
+        <div class="contSec ">
+        <div class="flexRowEqual">
+        <div>
+        <label class="blockLabel"><span class="truncateTxt">Selected <ev> Courses</ev></span></label>
+        <div class="valueTxt">
+        <a class="ripple dark" href="#">{{count($university->unversity_courses)}} Courses</a><label class="inlineLabel">&nbsp;(781+ Seats)</label></div>                
+        </div>
+        <div><label class="blockLabel truncateTxt">Exams</label>
+        <div class="valueTxt">
+        <div class="exams-flex">─</div>
+        </div>
+        </div>
+        </div>
+        <div class="flexRowEqual">
+        <div><label class="blockLabel">Value of Money Rating</label>
+        <div class="valueTxt"><span class="ctpv2-rating"><strong>4.7<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:94%"></i></i></strong></span></div>
+        </div>
+        <div><label class="blockLabel">Placement Rating</label>
+        <div class="valueTxt"><span class="ctpv2-rating"><strong>4.4<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:88%"></i></i></strong></span></div>
+        </div>
+        </div>
+        <div class="flexRowEqual">
+        <div><label class="blockLabel">Course Rating</label>
+        <div class="valueTxt"><a class="ratingCount_link ripple dark" href="/college/shri-ram-college-of-commerce-university-of-delhi-maurice-nagar-23930/reviews"><span class="ctpv2-rating"><strong>4.5<i class="empty_stars starBg rvw-lyr"><i class="full_starts starBg rvw-lyr" style="width:90%"></i></i></strong></span>416</a></div>
+        </div>
+        <div><label class="blockLabel">Ranked</label>
+        <div class="valueTxt">─</div>
+        </div>
+        </div>
+        </div>
+        <div class="btnSec flexRowSpaceBtwn btnWidth">
+        <div class="tupleCta"><button type="button" name="button" data-type="button" class="button button--secondary rippleefect">Apply Now</button>
+        <button type="button" onclick="downloadBrochure('{{ asset('storage/uploads/university/'.$university['uni_brochure']) }}');" id="brchr_53143" class="ctp-btn ctpBro-btn rippleefect button button--orange tupleBrochureButton brchr_53143"
+        ><i></i>Brochure</button></div><span class="course--shrtlst shortlistStar" style="float:left"><i id="shrt_53143" class="pwa-shrtlst-ico tupleShortlistButton shrt_53143"></i> </span></div>
+        <div
+        class="msgSec"></div>
+        </div>
+        </div>
+        </div>
     @endforeach
-            
-    @endif 
+@endif 
 
     
         
@@ -181,7 +184,7 @@
     <div class="row">
     <div class="Unive">
     <h3> Admission Requirements </h3>
-    <p>Here are the major requirements to study in UK which you need to ensure while applying to a UK university:</p>
+    <p>{{ $country['country_admissions'][0]->admission_para }}</p>
     </div>
     </div>
     
@@ -189,74 +192,19 @@
     <div class="mobile-hide">
     <div class="row">
     <ul>
-    <li>
-    <div class="Sm_box">
-    <img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/passport.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">Copy of a valid passport</div>
-    </div>
-    </div>
-    </li>
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/advancedScore.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">TOEFL/IELTS/C1 Advanced scores</div>
-    </div>
-    </div>
-    </li>
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/PGProgram.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">GMAT/GRE scores for PG programs</div>
-    </div>
-    </div>
-    </li>
-    
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/transcripts.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">Academic Transcripts</div>
-    </div>
-    </div>
-    </li>
-    
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/LOR.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">Letter of Recommendations (LORs)</div>
-    </div>
-    </div>
-    </li>
-    
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/Portfolio.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">Portfolio (for specific courses)</div>
-    </div>
-    </div>
-    </li>
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/cv.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">A CV (if applicable)</div>
-    </div>
-    </div>
-    </li>
-    
-    
-    <li>
-    <div class="Sm_box"><img class="logo__3sxIh" src="https://images.leverageedu.com/assets/img/study-locations/admission-requirements/sop.png">
-    <div class="siQ9U">
-    <div class="logo__24sa1">Statement of Purpose (SOP)</div>
-    </div>
-    </div>
-    </li>
+        @if (count($country['country_admissions']) > 0)
+            @foreach ($country['country_admissions'] as $admission)
+                <li>
+                    <div class="Sm_box">
+                        <img class="logo__3sxIh" src="{{ asset('storage/uploads/admission/'.$admission->admission_image) }}" alt="{{ $admission->admission_title }}">
+                        <div class="siQ9U">
+                            <div class="logo__24sa1">{{ $admission->admission_title }}</div>
+                        </div>
+                    </div>
+                </li>
+            @endforeach
+        @endif
+
     
     </ul>
     </div>
@@ -273,7 +221,7 @@
     <div class="find-thera-wrap position-relative w-100">
     <div class="row align-items-center mrg">
     <div class="col-md-12 col-sm-12 col-lg-6">
-    <div class="find-thera-img position-relative"><img class="img-fluid w-100" src="../img/find-thera-img.jpg" alt="Find Therapist Image"></div>
+    <div class="find-thera-img position-relative"><img class="img-fluid w-100" src="{{ asset('front_assets/img/find-thera-img.jpg') }}" alt="Find Therapist Image"></div>
     </div>
     <div class="col-md-12 col-sm-12 col-lg-6">
     <div class="find-thera-cap position-relative">
@@ -282,7 +230,7 @@
     <h2 class="mb-0">Get your Dream PTE or IELTS Score with Career Clinic Live Classes</h2>
     <p>Learn from the Best Tutors</p>
     <div class="btns-group d-inline-flex flex-wrap align-items-center w-100">
-    <a class="thm-btn v2 scndry-bg brd-rd5 d-inline-block position-relative overflow-hidden" href="#" title="">Book Your free Demo</a>
+    <a class="thm-btn v2 scndry-bg brd-rd5 d-inline-block position-relative overflow-hidden" href="javascript:void(0);" title="">Book Your free Demo</a>
     </div>
     </div>
     </div>
@@ -302,27 +250,11 @@
     <div class="about-us-classic">
     
     <div class="about-us-short">
-    
-    <h1>Scholarships</h1>
-    <img src="../img/specification.jpg" class="sch">
-    <span class="sub-title">There are various scholarships offered by the UK government, universities and private organisations to support the education of international students. Here is a list of the most popular scholarships to study in UK:</span>
-    
-    <ul>
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>British Chevening Scholarships for International Scholarships</li>
-    
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Erasmus Mundus Joint Masters Degree Scholarship</li>
-    
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>A.S Hornby Educational Trust Scholarship</li>
-    
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Felix Scholarships</li>
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Rhodes Scholarship</li>
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Commonwealth Scholarship and Fellowship Plan</li>
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Charles Wallace India Trust Scholarships (CWIT)</li>
-    
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Dr. Manmohan Singh Scholarships</li>
-    <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Inlaks Scholarships</li>
-    </ul>
-    
+    @if ($country['country_scholar'][0]->scholar_title != '')
+    <h1>{{ $country['country_scholar'][0]->scholar_title }} </h1>  
+    @endif
+    <img src="{{ asset('storage/uploads/scholar/'.$country['country_scholar'][0]->scholar_image) }}" class="sch" alt="{{ $country['country_scholar'][0]->scholar_title }}">
+    {!! $country['country_scholar'][0]->scholar_desc !!}
     </div>  
     </div>          
     </div>
@@ -334,93 +266,59 @@
     
     <section id="visa">
     <div class="w-100 scndry-layer opc98 position-relative">
-    <div class="fixed-bg patern-bg" style="background-image: url(../img/pattern-bg1.jpg);"></div>
+    <div class="fixed-bg patern-bg" style="background-image: url('{{ asset('front_assets/img/pattern-bg1.jpg') }}');"></div>
     <div class="testi-storie-wrap w-100">
     <div class="row mrg">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="col-md-12 col-sm-12 col-lg-6">
-    
-    
-    
-    
+   <div class="col-md-12 col-sm-12 col-lg-6">
     <div class="testi-wrap d-flex flex-wrap justify-content-center align-items-center position-relative w-100">
-    
     <div class="Unive">
     <h3> Visa Options </h3>
     </div>
     
-    
     <div class="testi-inner d-inline-block w-100">
     <div class="testi-list-caro">
     
-    
+    @if (count($country['country_visa']) > 0)
+    @foreach ($country['country_visa'] as $visa)
     <div class="testi-item-wrap d-block w-100">
     <div class="testi-item-box position-relative brd-rd10 w-100">
     <div class="testi-item-top d-flex flex-wrap align-items-center justify-content-between w-100">
     <div class="testi-item-info">
-    <h4 class="mb-0">Child Student - Tier 1</h4>
-    <span class="d-block thm-clr">Cost - £394</span>
+    <h4 class="mb-0">{{ $visa->visa_title }}</h4>
+    <span class="d-block thm-clr">Cost - {{ $visa->visa_cost }}</span>
     </div>
-    <span class="rate d-inline-block thm-clr"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+    <span class="rate d-inline-block thm-clr">
+        @if ($visa->visa_rating != '')
+        @for ($i=0; $i<5;$i++)
+            @if ($i < floor($visa->visa_rating))
+                <i class="fas fa-star"></i>
+            @elseif ($i == floor($visa->visa_rating) && $visa->visa_rating != floor($visa->visa_rating))
+                <i class="fas fa-star-half-alt"></i>
+            @else
+                <i class="far fa-star"></i>
+            @endif
+        @endfor
+    @endif
+    </span>
     </div>
-    <p class="type">Type- Study</p>
-    <p class="mb-0">You can apply for the Tier 4 (Child) student visa if you are aged between 4 and 17 and you want to study at an independent school in the UK. However w...</p>
+    <p class="type">Type- {{ $visa->visa_type }}</p>
+    <p class="mb-0">{{ $visa->visa_short_desc }}</p>
     </div>
-    </div>
-    
-    <div class="testi-item-wrap d-block w-100">
-    <div class="testi-item-box position-relative brd-rd10 w-100">
-    <div class="testi-item-top d-flex flex-wrap align-items-center justify-content-between w-100">
-    <div class="testi-item-info">
-    <h4 class="mb-0">Child Student - Tier 2</h4>
-    <span class="d-block thm-clr">Cost - £394</span>
-    </div>
-    <span class="rate d-inline-block thm-clr"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-    </div>
-    <p class="type">Type- Study</p>
-    <p class="mb-0">You can apply for the Tier 4 (Child) student visa if you are aged between 4 and 17 and you want to study at an independent school in the UK. However w...</p>
-    </div>
-    </div>
-    
-    <div class="testi-item-wrap d-block w-100">
-    <div class="testi-item-box position-relative brd-rd10 w-100">
-    <div class="testi-item-top d-flex flex-wrap align-items-center justify-content-between w-100">
-    <div class="testi-item-info">
-    <h4 class="mb-0">Child Student - Tier 3</h4>
-    <span class="d-block thm-clr">Cost - £394</span>
-    </div>
-    <span class="rate d-inline-block thm-clr"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-    </div>
-    <p class="type">Type- Study</p>
-    <p class="mb-0">You can apply for the Tier 4 (Child) student visa if you are aged between 4 and 17 and you want to study at an independent school in the UK. However w...</p>
-    </div>
-    </div>
-    
-    
+    </div>      
+    @endforeach
+    @endif
+
+
     </div>
     </div>
     </div>
     </div>
-    
-    
     <div class="col-md-12 col-sm-12 col-lg-6">
     <div class="storie-wrap text-center d-flex flex-wrap justify-content-center align-items-center overflow-hidden position-relative w-100" style="background-image: url(../img/story-bg.jpg);">
     <div class="storie-inner d-inline-block w-100">
-    
     <div class="Unive">
     <h3> Weather </h3>
     </div>
-    
-    
     <div class="row">
         <div class="col-sm-6 text-right"><span class="mr-2">Min</span> <span class="mr-3">Max</span></div>
         <div class="col-sm-6 text-right mobile-hide"><span class="mr-2">Min</span> <span class="mr-3">Max</span></div>
@@ -485,15 +383,11 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    
     </div>
     </div>
     </div>
     </div>
-    </div><!-- Testimonials & Stories Wrap -->
+    </div>
     </div>
     </section>
     
@@ -508,24 +402,33 @@
     <div class="get-time-inner d-inline-block w-100">
     <div class="sec-title v2 w-100">
     <div class="sec-title-inner">
-    <h2 class="mb-0">Careers + Work Opportunities.</h2>
-    <p class="mb-0">Studying in the UK offers a variety of experiences. The cultural and traditional values of the UK attract several international students every year. The popular areas of employment in UK are as follows:</p>
+        @if (count($country['country_work_opportunity']) > 0)
+            @php
+                $work_details = getWorkExtraDetailsById($country['country_work_opportunity'][0]->id);
+            @endphp
+        @endif
+        @if ($country['country_work_opportunity'][0]->title != '')
+    <h2 class="mb-0">{{ $country['country_work_opportunity'][0]->title }}</h2>
+    @endif
+    @if ($country['country_work_opportunity'][0]->content != '')
+    <p class="mb-0">{{ $country['country_work_opportunity'][0]->content }}</p>   
+    @endif
     </div>
     </div><!-- Sec Title -->
     
-    
+    @if ($country['country_work_opportunity'][0]->part_title != '')
     <div class="get-time-box brd-rd10 bg-color6 w-100">
-    <h3>Part-time Work Opportunities</h3>
-    <p>Maximum of 20 hours per week for regular students</p>
-    <p>Maximum of 10 hours per week for language center students</p>
+    <h3>{{$country['country_work_opportunity'][0]->part_title}}</h3>
+    <p>{{$country['country_work_opportunity'][0]->part_content}}</p>
     </div>
-    
+    @endif
+    @if ($country['country_work_opportunity'][0]->study_title != '')
     <div class="get-time-box brd-rd10 bg-color6 w-100">
-    <h3>Post Study Work VISA</h3>
-    <p>Students completing a Bachelors or Masters program get a work VISA of 2 years.</p>
-    <p>PhD graduates get a work VISA of 3 years.</p>
+    <h3>{{$country['country_work_opportunity'][0]->study_title}}</h3>
+    <p>{{$country['country_work_opportunity'][0]->study_content}}</p>
     </div>
-    
+    @endif
+
     </div>
     </div>
     </div>
@@ -539,76 +442,19 @@
     
     <div class="methods-wrap d-inline-block w-100">
     <div class="row">
+        @if (count($work_details) > 0)
+            @foreach ($work_details as $works)
     <div class="col-md-6 col-sm-6 col-lg-6">
     <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/1.png">
+    <img src="{{ asset('storage/uploads/works/'.$works->work_image) }}" alt="{{ $works->work_title }}">
     <div class="method-box-inner">
-    <h4 class="mb-0">Arts and Humanities</h4>
+    <h4 class="mb-0">{{ $works->work_title }}</h4>
     </div>
     </div>
-    </div>
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/2.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Social Sciences</h4>
-    </div>
-    </div>
-    </div>
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/3.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Law and Legal Studies</h4>
-    </div>
-    </div>
-    </div>
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/4.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Engineering and Technology</h4>
-    </div>
-    </div>
-    </div>
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/5.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Architecture</h4>
-    </div>
-    </div>
-    </div>
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/6.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Design</h4>
-    </div>
-    </div>
-    </div>
-    
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/7.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Medicine and Life Sciences</h4>
-    </div>
-    </div>
-    </div>
-    
-    <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="method-box d-flex flex-wrap align-items-start w-100">
-    <img src="../img/icon/8.png">
-    <div class="method-box-inner">
-    <h4 class="mb-0">Natural Sciences</h4>
-    </div>
-    </div>
-    </div>
-    
-    
-    
-    
+    </div>       
+    @endforeach  
+    @endif
+
     </div>
     </div>
     </div>
@@ -690,5 +536,54 @@
     </div>
     </div>
     </section>
+@endsection
+
+@section('script')
+<script>
+// University Slider
+$('.university_slider').owlCarousel({
+loop:true,
+nav:true,
+dots:true,
+autoplay:false,
+responsive:{
+0:{
+items:1
+},
+600:{
+items:1
+},
+1000:{
+items:3
+}
+}
+});
+
+
+function downloadBrochure(uni_brochure)
+{
+    if(uni_brochure != '')
+    {
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+
+        $.ajax({
+            url:"{{ route('download-brouchure') }}",
+            method:"POST",
+            data:{uni_brochure:uni_brochure},
+            success: function(response) {
+                var blob = new Blob([response]);
+                var link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'file.pdf';
+                link.click();
+            }
+        });
+    }
+}
+</script>
 @endsection
 

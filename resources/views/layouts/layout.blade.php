@@ -6,6 +6,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <title>Career Clinic | @yield('title')</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="icon" href="{{ asset('front_assets/img/favicon.png') }}" sizes="35x35" type="image/png">
 <link rel="stylesheet" href="{{ asset('front_assets/assets/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('front_assets/assets/css/flaticon.css') }}">

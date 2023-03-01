@@ -91,6 +91,11 @@
     <input type="hidden" class="form-control" name="test_uni_brochure" value="@if($university_list['uni_brochure'] != '') {{ $university_list['uni_brochure'] }} @endif">
 </div>
 
+<div class="mb-3">
+    <label class="form-label" for="uni_location">Location</label>
+    <input type="text" class="form-control" name="uni_location" value="@if($university_list['uni_location'] != '') {{ $university_list['uni_location'] }} @endif" id="uni_location" placeholder="University Location">
+</div>
+
 <h4>About Section</h4>
 
 <div class="mb-3">

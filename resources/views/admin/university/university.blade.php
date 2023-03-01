@@ -71,6 +71,11 @@
     <input type="file" class="form-control" name="uni_brochure" id="uni_brochure" placeholder="University Brochure">
 </div>
 
+<div class="mb-3">
+    <label class="form-label" for="uni_location">Location</label>
+    <input type="text" class="form-control" name="uni_location" id="uni_location" placeholder="University Location">
+</div>
+
 <h4>About Section</h4>
 
 <div class="mb-3">

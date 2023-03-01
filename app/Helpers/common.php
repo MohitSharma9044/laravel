@@ -100,6 +100,13 @@ return $menuList;
     }
 
 
+    function getParentCountrySlugById($id)
+    {
+    $country = DB::table('countries')->where(['id' => $id])->get();
+    $country_slug = $country[0]->country_slug;
+    return $country_slug;
+    }
+
 
 
 ?>

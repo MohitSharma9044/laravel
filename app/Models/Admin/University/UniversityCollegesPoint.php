@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class UniversityCollegesPoint extends Model
 {
     use HasFactory;
+
+    public function colleges()
+    {
+        return $this->belongsTo(UniversityColleges::class);
+    }
 }

@@ -49,6 +49,7 @@ class UniversityController extends Controller
         $university->uni_program_title = $request->uni_program_title;
         $university->uni_course_heading = $request->uni_course_heading;
         $university->uni_college_heading = $request->uni_college_heading;
+        $university->uni_location = $request->uni_location;
         if($request->hasFile('uni_logo'))
         {
             $uploadPath = "public/uploads/university/";
@@ -218,6 +219,7 @@ class UniversityController extends Controller
         $university->uni_program_title = $request->uni_program_title;
         $university->uni_course_heading = $request->uni_course_heading;
         $university->uni_college_heading = $request->uni_college_heading;
+        $university->uni_location = $request->uni_location;
         if($request->hasFile('uni_logo'))
         {
             if (Storage::exists('public/uploads/university/'.$university->uni_logo)) {

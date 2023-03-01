@@ -28,6 +28,7 @@ class CreateUniversitiesTable extends Migration
             $table->string('uni_program_title');
             $table->string('uni_course_heading');
             $table->string('uni_college_heading');
+            $table->string('uni_location');
             $table->string('status')->default('Disabled');
             $table->timestamps();
         });

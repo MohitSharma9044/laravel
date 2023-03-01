@@ -22,6 +22,7 @@ Route::view('finance', 'finance');
 Route::view('privacy-policy', 'privacy-policy');
 Route::get('country/{slug}', [HomeController::class, 'countryDetails'])->name('country');
 Route::get('country/{parant}/{slug}', [HomeController::class, 'parentCountryDetails'])->name('country.parent.name');
+Route::post('download-brouchure', [HomeController::class, 'downloadBrochure'])->name('download-brouchure');
 
 
 

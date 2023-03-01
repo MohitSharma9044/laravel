@@ -13,4 +13,17 @@ class University extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function unversity_courses()
+    {
+        return $this->hasMany(UniversityCourse::class);
+    }
+    public function unversity_colleges()
+    {
+        return $this->hasMany(UniversityCourse::class);
+    }
+    public function unversity_programs()
+    {
+        return $this->hasMany(UniversityCourse::class);
+    }
 }
