@@ -24,6 +24,7 @@ Route::get('country/{slug}', [HomeController::class, 'countryDetails'])->name('c
 Route::get('country/{parant}/{slug}', [HomeController::class, 'parentCountryDetails'])->name('country.parent.name');
 Route::get('details/{country_slug}/{slug}', [HomeController::class, 'universityDetails'])->name('details.country.slug');
 Route::post('download-brouchure', [HomeController::class, 'downloadBrochure'])->name('download-brouchure');
+Route::get('university-list', [HomeController::class, 'universityList'])->name('university-list');
 
 
 

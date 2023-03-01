@@ -122,7 +122,7 @@ src="{{ asset('front_assets/img/logo.png') }}" width="" height="">
 
 
 
-<li><a href="{{ url('coming-soon') }}">Universities</a></li>
+<li><a href="{{ url('university-list') }}">Universities</a></li>
 
 <li><a href="javascript:void(0);" title="">More</a>
 <ul class="Drop_down">

@@ -50,4 +50,11 @@ class HomeController extends Controller
         return view('details', $data);
     }
 
+
+    public function universityList(Request $request)
+    {
+        $data['university_list'] = University::with('unversity_courses', 'unversity_colleges', 'unversity_programs')->get();
+        return view('listing', $data);
+    }
+
 }
