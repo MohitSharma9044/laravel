@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin\Country\Country;
+use App\Models\Admin\Course\Course;
 use App\Models\Admin\Country\CostQuestion;
 use App\Models\Admin\Country\WorkDetail;
 use App\Models\Admin\University\UniversityCoursesPoint;
@@ -105,6 +106,12 @@ return $menuList;
     $country = DB::table('countries')->where(['id' => $id])->get();
     $country_slug = $country[0]->country_slug;
     return $country_slug;
+    }
+
+    function getMainCourseById($id)
+    {
+        $courses = Course::where(['id' => $id])->first();
+        return $courses;
     }
 
 

@@ -20,10 +20,10 @@ class University extends Model
     }
     public function unversity_colleges()
     {
-        return $this->hasMany(UniversityCourse::class);
+        return $this->hasMany(UniversityColleges::class);
     }
     public function unversity_programs()
     {
-        return $this->hasMany(UniversityCourse::class);
+        return $this->hasMany(UniversityProgram::class);
     }
 }
